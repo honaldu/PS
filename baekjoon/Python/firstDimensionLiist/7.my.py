@@ -6,8 +6,5 @@
 
 for i in range(int(input())):
     a, *p = map(int, input().split())
-    count = 0
-    for j in p:
-        if j > sum(p)/a:
-            count += 1
-    print(str('%.3f' % round(count*100/a, 3))+'%')
+    s = sum(p)/a
+    print('%.3f%%' % (sum(i > s for i in p)*100/a))
