@@ -4,6 +4,7 @@
 
 # 배울 점
 # string 도 for 문으로 각 요소 출력 가능.
+# return 값에 비교 연산자 사용.-
 
 def solution(n):
     return n % sum([int(c) for c in str(n)]) == 0
