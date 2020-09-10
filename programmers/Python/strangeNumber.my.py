@@ -1,13 +1,10 @@
-# string split 함수로 커팅
-# upper 문자 활용
-# 이터러블로 stringList 내부 글자 list 안에 분리하며 index 값 마다 upper 함수로 대문자화
-# join 함수로 합체
+# split 함수로 s 분리
+# 내부 이터러블로 enumerate함수를 이용한 index, 값 추출
+# index 값에 따라 대문자, 소문자 화
+# join 함수로 병합
 
-def solution(string):
-    stringList = string.split()
-    devidedList = [[list(j) for j in i]for i in stringList]
-    capitalized = [[[j.upper() for l in j]for j in i]for i in devidedList]
-    print([[[j.upper() for l in j]for j in i]for i in devidedList])
+def solution(s):
+    return ' '.join([''.join([c.upper() if i % 2 == 0 else c.lower() for i, c in enumerate(w)]) for w in s.split(' ')])
 
 
 solution("try hello world")
