@@ -11,11 +11,13 @@
 def solution(n, lost, reserve):
     for i in lost:
         if i in reserve:
-            return i
+            reserve.remove(i)
         elif i+1 in reserve:
-            return i, reserve.index(i+1)
+            reserve.remove(i+1)
         elif i-1 in reserve:
-            return i, reserve.index(i-1)
+            reserve.remove(i-1)
+        lost.remove(i)
+    return n-len(lost)
 
 
 print(solution(4, [2], [1]))
