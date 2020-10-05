@@ -9,15 +9,20 @@
 # n 에서 lost 길이 뺀 수 return
 
 def solution(n, lost, reserve):
-    for i in lost:
-        if i in reserve:
-            reserve.remove(i)
-        elif i+1 in reserve:
-            reserve.remove(i+1)
-        elif i-1 in reserve:
-            reserve.remove(i-1)
-        lost.remove(i)
+    for number in lost:
+        if number in reserve:
+            reserve.remove(number)
+            lost.remove(number)
+            continue
+        elif number-1 in reserve:
+            reserve.remove(number-1)
+            lost.remove(number)
+            continue
+        elif number+1 in reserve:
+            reserve.remove(number+1)
+            lost.remove(number)
+            continue
     return n-len(lost)
 
 
-print(solution(4, [2], [1]))
+print(solution(5, [2, 4], [1, 3, 5]))
