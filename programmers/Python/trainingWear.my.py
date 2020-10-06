@@ -8,6 +8,9 @@
 # lost, -1,+1 한 값이 reserve 안에 있을시 해당되는 lost 값과 reserve 제거
 # n 에서 lost 길이 뺀 수 return
 
+# elif 에 대한 이해도 부족
+# 논리성 부족 (중복, i+1, i-1 을 각각 어떻게 처리할지, 순서, 방법에 대한 연구를 나눠야함.)
+
 def solution(n, lost, reserve):
     for number in lost:
         if number in reserve:
