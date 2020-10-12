@@ -8,14 +8,34 @@ from typing import List
 
 class Solution:
     def lastStoneWeight(self, stones: List[int]) -> int:
-        while stones != [1] or stones != [0]:
-            first = max(stones)
-            stones.remove(max(stones))
-            second = max(stones)
-            stones.remove(max(stones))
-            smashed = first-second
-            if smashed != 0:
-                stones.append(smashed)
+        first = max(stones)
+        stones.remove(max(stones))
+        second = max(stones)
+        stones.remove(max(stones))
+        smashed = first-second
+        if smashed != 0:
+            stones.append(smashed)
+        first = max(stones)
+        stones.remove(max(stones))
+        second = max(stones)
+        stones.remove(max(stones))
+        smashed = first-second
+        if smashed != 0:
+            stones.append(smashed)
+        first = max(stones)
+        stones.remove(max(stones))
+        second = max(stones)
+        stones.remove(max(stones))
+        smashed = first-second
+        if smashed != 0:
+            stones.append(smashed)
+        first = max(stones)
+        stones.remove(max(stones))
+        second = max(stones)
+        stones.remove(max(stones))
+        smashed = first-second
+        if smashed != 0:
+            stones.append(smashed)
         return stones
 
 
